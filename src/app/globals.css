@@ -1,33 +1,303 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: rgb(211, 216, 232);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #0d1224;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  /* body {
+    @apply font-rajdhani text-lg leading-8 text-white bg-[#220c3b];
+  } */
+  .h2 {
+    @apply font-orbitron text-[32px] mb-6 tracking-[10%] uppercase;
+  }
+  .h3 {
+    @apply font-orbitron font-semibold text-[26px] mb-6 leading-[46px];
+  }
+  .btn {
+    @apply rounded-full z-20 font-rajdhani text-white font-medium;
+  }
+  .btn-sm {
+    @apply h-[48px] px-6 text-sm;
+  }
+  .btn-lg {
+    @apply h-[56px] px-10 text-base;
+  }
+  .btn-link {
+    @apply text-base font-rajdhani;
+  }
+  li {
+    @apply list-disc ml-4 font-medium border-b-[1px] w-fit border-white/50;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r text-transparent bg-clip-text from-[#42A6E3] to-[#FF56F6] font-bold font-rajdhani hover:from-[#FF56F6] hover:to-[#42A6E3];
+  }
+  .section {
+    @apply py-8 lg:py-24 lg:min-h-screen h-auto flex items-center;
+  }
+  .navContainer {
+    @apply w-full fixed bottom-8 left-[50%] bg-black/20 h-[76px] lg:h-[96px] backdrop-blur-2xl rounded-full max-w-[280px] lg:max-w-[420px] mx-auto px-4 lg:px-5 flex items-center justify-between text-xl lg:text-2xl text-white/50 z-50;
+  }
+  .navItem {
+    @apply cursor-pointer w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] flex items-center justify-center;
+  }
+
+  .certificate {
+    @apply border-[0.5px] h-[300px] md:h-[280px] w-full md:w-[320px] border-[#8228ec] rounded-md flex justify-center items-center mx-auto;
   }
 }
+
+/* scroll-bar start */
+html::-webkit-scrollbar {
+  width: 10px;
+}
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    92.23deg,
+    #ff56f6 21.43%,
+    #b936ee 50.63%,
+    #3bace2 100%,
+    #406aff 117.04%
+  );
+
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #230d3e;
+}
+/* scroll-bar end */
+
+/* container start */
+
+.widthContainer {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.aboutContainer {
+  background-image: url(/images/monir_with_laptop.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  min-height: 500px;
+}
+/* container end */
+
+/* gradient start */
+
+.gradient_Logo {
+  font-weight: 700;
+  background-image: linear-gradient(to right, #b809c3, #aaa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.btn {
+  background: linear-gradient(
+    92.23deg,
+    #ff56f6 21.43%,
+    #b936ee 50.63%,
+    #3bace2 100%,
+    #406aff 117.04%
+  );
+  box-shadow: 0px 4.42184px 107.23px rgba(255, 86, 246, 0.51);
+}
+
+.btn:hover {
+  background: linear-gradient(
+    92.23deg,
+    #406aff 21.43%,
+    #3bace2 50.63%,
+    #b936ee 100%,
+    #ff56f6 117.04%
+  );
+}
+
+.gradient {
+  background: linear-gradient(
+    92.23deg,
+    #406aff 21.43%,
+    #3bace2 50.63%,
+    #b936ee 100%,
+    #ff56f6 117.04%
+  );
+}
+
+/* gradient end */
+
+/* loader start */
+.loader {
+  font-size: 48px;
+  display: inline-block;
+  letter-spacing: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  box-sizing: border-box;
+  animation: animloader 1s ease-in infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    filter: blur(0px);
+    transform: skew(0deg);
+  }
+  100% {
+    filter: blur(3px);
+    transform: skew(-4deg);
+  }
+}
+
+.slide-in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1e0b39;
+  transform-origin: top;
+}
+.slide-out {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1e0b39;
+  transform-origin: bottom;
+}
+
+/* loader end */
+
+/* glow card start */
+
+.glow-container {
+  --spread: 60;
+}
+.glow-card {
+  --active: 0.15;
+  --start: 0;
+}
+.glow-card:hover,
+.glow-card:focus-visible {
+  z-index: 2;
+}
+.glows {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  filter: blur(calc(var(--blur) * 1px));
+}
+.glows::after,
+.glows::before {
+  --alpha: 0;
+  content: "";
+  background: conic-gradient(
+    from 180deg at 50% 70%,
+    #f626af 0deg,
+    #8228ec 72.0000010728836deg,
+    #f626af 144.0000021457672deg,
+    #0025ba 216.00000858306885deg,
+    #f626af 288.0000042915344deg,
+    #fafafa 1turn
+  );
+  background-attachment: fixed;
+  position: absolute;
+  inset: -5px;
+  border: 8px solid transparent;
+  border-radius: 12px;
+  mask: linear-gradient(#0000, #0000),
+    conic-gradient(
+      from calc((var(--start) - (var(--spread) * 0.5)) * 1deg),
+      #000 0deg,
+      #fff,
+      #0000 calc(var(--spread) * 1deg)
+    );
+  mask-composite: intersect;
+  mask-clip: padding-box, border-box;
+  opacity: var(--active);
+  transition: opacity 1s;
+}
+.glow-card::before {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  content: "";
+  border-radius: 12px;
+  pointer-events: none;
+  background: #84738c;
+  background-attachment: fixed;
+  border-radius: 12px;
+  mask: linear-gradient(#0000, #0000),
+    conic-gradient(
+      from
+        calc(
+          ((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 1.5)) *
+            1deg
+        ),
+      #ffffff26 0deg,
+      white,
+      #ffffff26 calc(var(--spread) * 2.5deg)
+    );
+  mask-clip: padding-box, border-box;
+  mask-composite: intersect;
+  opacity: var(--active);
+  transition: opacity 1s;
+}
+.glow-card::after {
+  --bg-size: 100%;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  background: conic-gradient(
+    from 180deg at 50% 70%,
+    #f626af 0deg,
+    #8228ec 72.0000010728836deg,
+    #f626af 144.0000021457672deg,
+    #0025ba 216.00000858306885deg,
+    #f626af 288.0000042915344deg,
+    #fafafa 1turn
+  );
+  background-attachment: fixed;
+  border-radius: 12px;
+  opacity: var(--active, 0);
+  transition: opacity 1s;
+  --alpha: 0;
+  inset: 0;
+  border: 2px solid transparent;
+  mask: linear-gradient(#0000, #0000),
+    conic-gradient(
+      from
+        calc(
+          ((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 0.5)) *
+            1deg
+        ),
+      #0000 0deg,
+      #fff,
+      #0000 calc(var(--spread) * 0.5deg)
+    );
+  filter: brightness(1.5);
+  mask-clip: padding-box, border-box;
+  mask-composite: intersect;
+}
+
+/* glow card end */
