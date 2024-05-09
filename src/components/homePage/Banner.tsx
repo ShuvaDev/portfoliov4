@@ -10,6 +10,7 @@ import { TypeAnimation } from "react-type-animation";
 
 // componets
 import { fadeIn } from "@/components/animation/varient";
+import { Tooltip } from "@material-tailwind/react";
 import ResumeDownloadButton from "../buttons/ResumeDownloadButton";
 
 const Banner = () => {
@@ -115,16 +116,26 @@ const Banner = () => {
             variants={fadeIn("down", 0.5)}
             initial="hidden"
             whileInView={"show"}
-            className="hidden lg:flex flex-1 max-w-[320px] h-full lg:max-w-[482px]"
+            className="hidden lg:flex flex-1"
           >
-            <Image
-              src="/images/monir.webp"
-              width={500}
-              height={320}
-              className="scale-[200%] duration-300 hover:scale-[215%]"
-              alt="monir"
-              priority
-            />
+            <Tooltip
+              content="Assalamu Alaikum"
+              animate={{
+                mount: { scale: 1, y: 0 },
+                unmount: { scale: 0, y: 25 },
+              }}
+              placement="top"
+            >
+              <div className="h-[470px] w-[448px] border-[1px] border-white/20 relative overflow-hidden">
+                <Image
+                  src="/images/sharpProfile.webp"
+                  fill
+                  className="scale-[100%] duration-300 hover:scale-[115%]"
+                  alt="monir"
+                  priority
+                />
+              </div>
+            </Tooltip>
           </motion.div>
         </div>
       </div>
