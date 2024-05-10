@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Head from "next/head";
 
 // CSS
+import NProgress from "@/components/animation/NProgress";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
       </Head>
       <body>
+        <NProgress />
         <main className="min-h-screen w-full">{children}</main>
       </body>
     </html>
