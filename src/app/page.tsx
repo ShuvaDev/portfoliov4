@@ -1,6 +1,7 @@
 // Packages
 import About from "@/components/homePage/About";
 import Education from "@/components/homePage/Education";
+import Experiences from "@/components/homePage/Experiences.";
 import MyProjects from "@/components/homePage/MyProjects";
 import Skill from "@/components/homePage/Skills";
 import ContactBody from "@/components/homePage/contact-body";
@@ -38,6 +39,7 @@ export default async function Home() {
         <MyProjects projects={projects} />
         <Education />
         <Certificates />
+        <Experiences />
         <ContactBody />
       </PageTransition>
     </section>
