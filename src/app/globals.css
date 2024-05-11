@@ -309,8 +309,8 @@ html::-webkit-scrollbar-track {
 .lds-ring {
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
 .lds-ring div {
   box-sizing: border-box;

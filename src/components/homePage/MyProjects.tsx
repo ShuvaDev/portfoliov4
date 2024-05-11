@@ -5,6 +5,7 @@ import { fadeIn } from "@/components/animation/varient";
 import { project } from "@prisma/client";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 // Components
@@ -45,12 +46,12 @@ const MyProjects: React.FC<MyProjectsProps> = ({ projects }) => {
                 Crafting Dynamic Websites with Next.js, MongoDB, Express JS and
                 React Packages for an Enhanced User Experience
               </p>
-              <button
-                onClick={() => router.push("/projects")}
-                className="btn btn-sm"
-              >
-                View all projects
-              </button>
+              <Link href="/projects" className="flex items-center">
+                <div className="btn btn-sm flex items-center">
+                  {" "}
+                  View all projects
+                </div>
+              </Link>
             </motion.div>
             {projects?.slice(0, 3).map((project, index) => (
               <motion.div

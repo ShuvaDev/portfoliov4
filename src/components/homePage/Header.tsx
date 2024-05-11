@@ -24,9 +24,9 @@ const Header = () => {
     >
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
-          <Link href="/">
+          <Link href="/" className="z-50">
             <div className="flex flex-col items-start group">
-              <p className="gradient_Logo group-hover:text-[#ffffff] duration-300 transition-all ease-linear text-[45px]">
+              <p className="gradient_Logo group-hover:text-white/70 duration-300 transition-all ease-linear text-[45px]">
                 Monir
               </p>
             </div>
