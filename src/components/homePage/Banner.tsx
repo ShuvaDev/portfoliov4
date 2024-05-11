@@ -70,8 +70,8 @@ const Banner = () => {
               className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0"
             >
               <a
-                href="https://www.fiverr.com/monir_h_rabby"
-                target="_Fiverr"
+                href="https://wa.me/+8801956306002"
+                target="_whatsappr"
                 className="btn btn-sm lg:btn-lg flex items-center cursor-pointer"
               >
                 Hire Me
