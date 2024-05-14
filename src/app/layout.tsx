@@ -1,4 +1,5 @@
 // Package
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import Head from "next/head";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body>
         <NProgress />
         <main className="min-h-screen w-full">{children}</main>
+        <SpeedInsights />
       </body>
     </html>
   );
